@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/images/adwokatura-polska-logo-small.svg";
+import arrow from "../../assets/images/arrow.svg";
+---
+
+<a
+  class="w-full flex bg-green border-2 border-white rounded-full hover:scale-105 transition-transform"
+  href="#"
+>
+  <div
+    class="flex justify-center items-center border-r-2 border-white pl-7 pr-5 py-[10px]"
+  >
+    <Image src={logo} width="56" height="51" alt="Adwokatura Polska Logo" />
+  </div>
+  <div class="w-full flex justify-between items-center px-6 py-3">
+    <span
+      class="text-lg text-white leading-tight uppercase tracking-wider lg:text-2xl"
+      >Znajdź adwokata</span
+    >
+    <Image src={arrow} width="18" height="20" alt="" />
+  </div>
+</a>

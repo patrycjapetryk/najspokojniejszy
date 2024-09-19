@@ -1,32 +1,73 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import Cards from "../components/molecules/Cards.astro";
+import video from "../assets/images/video.jpg";
+import CTA from "../components/molecules/CTA.astro";
 ---
 
 <Layout title="Najspokojniejszy człowiek na świecie.">
   <main>
-    <h1 class="text-black">Welcome</h1>
-    <ul role="list" class="grid grid-cols-4 gap-2">
-      <Card
-        href="*"
-        title="Documentation"
-        body="Learn how Astro works and explore the official API docs."
+    <h1 class="text-black hidden">
+      Najspokojniejszy człowiek na świecie ma adwokata na wszelki wypadek
+    </h1>
+    <section class="h-[90vh]">
+      <Image
+        class="w-full h-full object-cover"
+        src={video}
+        alt="Adwokatura Polska Logo"
       />
-      <Card
-        href="*"
-        title="Integrations"
-        body="Supercharge your project with new frameworks and libraries."
-      />
-      <Card
-        href="*"
-        title="Themes"
-        body="Explore a galaxy of community-built starter themes."
-      />
-      <Card
-        href="*"
-        title="Community"
-        body="Come say hi to our amazing Discord community. ❤️"
-      />
-    </ul>
+    </section>
+
+    <section class="max-w-[1100px] mx-auto my-14 px-8 xl:my-32">
+      <h2 class="mb-6 text-xl uppercase font-bold">O kampanii</h2>
+      <div
+        class="grid grid-cols-1 xl:grid-cols-2 gap-x-12 gap-y-6 leading-snug"
+      >
+        <p>
+          Najspokojniejszy człowiek na świecie ma&nbsp;adwokata na&nbsp;wszelki
+          wypadek” to kampania, która przypomina o&nbsp;tym, jak ważne jest
+          poczucie bezpieczeństwa w codziennym życiu. W&nbsp;każdej chwili mogą
+          pojawić&nbsp;się sytuacje, w których potrzebne będzie wsparcie prawne
+          - czy&nbsp;to w&nbsp;sprawach rodzinnych, karnych,
+          czy&nbsp;gospodarczych.
+        </p>
+        <p>
+          Mając adwokata, masz pewność, że Twoje interesy są chronione,
+          a&nbsp;Ty możesz spać spokojnie, niezależnie od okoliczności.
+          Adwokat&nbsp;to nie&nbsp;tylko pomoc w&nbsp;kryzysie, ale&nbsp;także
+          gwarancja, że&nbsp;jesteś przygotowany na&nbsp;każdy&nbsp;scenariusz,
+          który&nbsp;niesie życie.
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="flex justify-center items-end h-[80vh] max-h-[640px] bg-lawyer bg-right-top bg-no-repeat bg-cover lg:justify-start xl:items-center"
+    >
+      <div
+        class="flex flex-col max-w-[600px] px-[4%] mb-[30%] sm:mb-[10%] lg:w-[36%] lg:min-w-[524px] lg:ml-[25%] xl:mb-0"
+      >
+        <CTA />
+        <p class="text-white leading-tight">
+          Dzięki rejestrowi można w prosty sposób wyszukać adwokata według
+          nazwiska, miejscowości, w której prowadzi kancelarię lub dziedziny
+          prawa, którą się zajmuje
+        </p>
+      </div>
+    </section>
+
+    <section
+      class="max-w-[1000px] mx-auto my-20 text-center leading-snug sm:px-10 lg:px-0 xl:my-32"
+    >
+      <h2 class="mb-6 text-xl uppercase font-bold">W czym możemy ci pomóc?</h2>
+      <p class="mx-auto mb-16 text-sm max-w-[80%] xl:mb-20">
+        Oferujemy wsparcie w sprawach cywilnych, karnych, gospodarczych i
+        rodzinnych. Pomożemy Ci zrozumieć Twoje prawa i znaleźć najlepsze
+        rozwiązanie prawne, byś mógł spać spokojnie.
+      </p>
+      <Cards />
+    </section>
   </main>
 </Layout>
