@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
-
 import Layout from "../layouts/Layout.astro";
 import Cards from "../components/molecules/Cards.astro";
-import video from "../assets/images/video.jpg";
+import video from "../assets/video/najspokojniejszy.mp4";
 import CTA from "../components/molecules/CTA.astro";
+import play from "../assets/images/play.svg";
 ---
 
 <Layout title="Najspokojniejszy człowiek na świecie.">
@@ -12,12 +12,14 @@ import CTA from "../components/molecules/CTA.astro";
     <h1 class="text-black hidden">
       Najspokojniejszy człowiek na świecie ma adwokata na wszelki wypadek
     </h1>
-    <section class="h-[90vh]">
-      <Image
-        class="w-full h-full object-cover"
-        src={video}
-        alt="Adwokatura Polska Logo"
-      />
+
+    <section class="relative">
+      <video class="video w-full h-auto" loop playsinline>
+        <source src={video} type="video/mp4" />
+      </video>
+      <div class="play absolute top-[42%] left-[46%] w-[8%] cursor-pointer">
+        <Image src={play} alt="" />
+      </div>
     </section>
 
     <section class="max-w-[1100px] mx-auto my-14 px-8 xl:my-32">
@@ -71,3 +73,37 @@ import CTA from "../components/molecules/CTA.astro";
     </section>
   </main>
 </Layout>
+
+<script>
+  const videoElement: HTMLVideoElement | null =
+    document.querySelector(".video");
+  const playElement: HTMLDivElement | null = document.querySelector(".play");
+
+  function toggleVideo() {
+    if (videoElement && playElement) {
+      if (videoElement.paused) {
+        videoElement.play();
+        playElement.style.display = "none";
+      } else {
+        videoElement.pause();
+      }
+    }
+  }
+
+  function showControls() {
+    if (videoElement) {
+      videoElement.controls = true;
+    }
+  }
+
+  function hideControls() {
+    if (videoElement) {
+      videoElement.controls = false;
+    }
+  }
+
+  playElement?.addEventListener("click", toggleVideo);
+  playElement?.addEventListener("mouseover", showControls);
+  videoElement?.addEventListener("mouseover", showControls);
+  videoElement?.addEventListener("mouseout", hideControls);
+</script>
