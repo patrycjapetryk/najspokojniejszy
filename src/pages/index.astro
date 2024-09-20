@@ -2,10 +2,11 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Cards from "../components/molecules/Cards.astro";
-import video from "../assets/video/najspokojniejszy.mp4";
 import CTA from "../components/molecules/CTA.astro";
-import play from "../assets/images/play.svg";
 import Paragraph from "../components/atoms/Paragraph.astro";
+import video from "../assets/video/najspokojniejszy.mp4";
+import play from "../assets/images/play.svg";
+import playPoster from "../assets/images/najspokojniejszy-play.jpg";
 ---
 
 <Layout title="Najspokojniejszy człowiek na świecie.">
@@ -18,8 +19,8 @@ import Paragraph from "../components/atoms/Paragraph.astro";
       <video class="video w-full h-auto" loop playsinline>
         <source src={video} type="video/mp4" />
       </video>
-      <div class="play absolute top-[42%] left-[46%] w-[8%] cursor-pointer">
-        <Image src={play} alt="" />
+      <div class="play absolute top-0 left-0 w-full cursor-pointer">
+        <Image src={playPoster} alt="" />
       </div>
     </section>
 
