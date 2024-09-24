@@ -2,11 +2,13 @@
 import { Image } from "astro:assets";
 import logo from "../../assets/images/adwokatura-polska-logo-small.svg";
 import arrow from "../../assets/images/arrow.svg";
+
+const link = "https:/www.rejestradwokatow.pl";
 ---
 
 <a
   class="w-full flex bg-green border-2 border-white rounded-full hover:scale-105 transition-transform"
-  href="#"
+  href={link}
 >
   <div
     class="flex justify-center items-center border-r-2 border-white pl-7 pr-5 py-[10px]"
