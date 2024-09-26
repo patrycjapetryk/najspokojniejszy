@@ -6,9 +6,13 @@ import CTA from "../components/molecules/CTA.astro";
 import Paragraph from "../components/atoms/Paragraph.astro";
 import video from "../assets/video/najspokojniejszy.mp4";
 import playPoster from "../assets/images/najspokojniejszy-play.jpg";
+
+const title = "Najspokojniejszy człowiek na świecie";
+const description =
+  "Najspokojniejszy człowiek na świecie ma adwokata na wszelki wypadek” to kampania, która przypomina o tym, jak ważne jest poczucie bezpieczeństwa w codziennym życiu.";
 ---
 
-<Layout title="Najspokojniejszy człowiek na świecie.">
+<Layout title={title} description={description}>
   <main>
     <h1 class="text-black hidden">
       Najspokojniejszy człowiek na świecie ma adwokata na wszelki wypadek
